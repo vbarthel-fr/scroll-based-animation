@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+	<title>SwitchModel : Demo</title>
+</head>
+<body>
+	
+    <div class="ladder H2000px">
+        <span class="pixelGraduation top200px">
+            200px
+        </span>
+        
+        <span class="pixelGraduation top400px">
+            400px
+        </span>
+        
+        <span class="pixelGraduation top600px">
+            600px
+        </span>
+        
+        <span class="pixelGraduation top800px">
+            800px
+        </span>
+        
+        <span class="pixelGraduation top1000px">
+            1000px
+        </span>
+        
+        <span class="pixelGraduation top1200px">
+            1200px
+        </span>
+        
+        <span class="pixelGraduation top1400px">
+            1400px
+        </span>
+        
+        <span class="pixelGraduation top1600px">
+            1600px
+        </span>
+        
+        <span class="pixelGraduation top1800px">
+            1800px
+        </span>
+        
+    </div>
+    
+    <section class="fixedContent fcCentered" id="switchModelDemo">
+            scroll < 200 px -> font-size : 1em; font-weight:normal;<br>
+            200px < scroll < 800 px -> font-size : 1em; font-weight:bold;<br>
+            800px < scroll -> font-size : 2em; font-weight:bold;<br>
+    </section>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./switch.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var  switchDemo = new SwitchView({
+                elementId     :   "#switchModelDemo"
+            });
+            
+            switchDemo.addSwitchProperty({
+                scrollChange    :   800,
+                name            :   "font-size",
+                valueBefore     :   "1em",
+                valueAfter      :   "1.5em",
+            });
+            
+            switchDemo.addSwitchProperty({
+                scrollChange    :   200,
+                name            :   "font-weight",
+                valueBefore     :   "normal",
+                valueAfter      :   "bold",
+            });
+            
+            
+            $(window).bind('scroll', function(){
+                var windowScrollTop = $(window).scrollTop();
+                switchDemo.update(windowScrollTop);
+            })
+            
+        });
+    </script>
+</body>
+</html>
