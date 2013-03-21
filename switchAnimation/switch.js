@@ -1,4 +1,3 @@
-
 /*************************************************************************
 **************************************************************************
             CLASS
@@ -21,9 +20,9 @@
 (function(){
 
     SwitchModel = function(params){
-        this.scrollChange           =   params.scrollChange;
-        this.valueBefore            =   params.valueBefore;
-        this.valueAfter             =   params.valueAfter;
+        this.scrollChange   =   params.scrollChange;
+        this.valueBefore    =   params.valueBefore;
+        this.valueAfter     =   params.valueAfter;
         return this;
     };
     
