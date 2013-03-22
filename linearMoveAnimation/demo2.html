@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+	<title>SwitchModel : Demo</title>
+</head>
+<body style="height : 2000px;">
+	
+    <div id="linearMoveModelDemo2">
+    
+        <div id="linearMoveModelDemo2LeftDoor">
+        
+        </div>
+        
+        <div id="linearMoveModelDemo2RightDoor">
+        
+        </div>
+    
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./linearMove.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var myModel = new LinearMoveModel({
+                scrollStart     :   0,
+                scrollEnd       :   1000,
+                xStart          :   0,
+                yStart          :   0,
+                xMovement       :   -50,
+                xUnit           :   "%"
+            });
+            
+            var myView = new LinearMoveView({
+                elementId : "#linearMoveModelDemo2LeftDoor"
+            });
+            
+            myView.setModel(myModel);
+            
+            
+            var myModel2 = new LinearMoveModel({
+                scrollStart     :   0,
+                scrollEnd       :   1000,
+                xStart          :   50,
+                yStart          :   0,
+                xMovement       :   50,
+                xUnit           :   "%"
+            });
+            
+            var myView2 = new LinearMoveView({
+                elementId : "#linearMoveModelDemo2RightDoor"
+            });
+            
+            myView2.setModel(myModel2);
+            
+            $(window).bind('scroll', function(){
+                var windowScrollTop = $(window).scrollTop();
+                
+                myView.update(windowScrollTop);
+                myView2.update(windowScrollTop);
+            })
+            
+        });
+    </script>
+</body>
+</html>
