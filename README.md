@@ -11,5 +11,5 @@ SwitchAnimation
 http://vbarthel-fr.github.com/scroll-based-animation/switchAnimation/demo
 
 LinearMoveAnimation
-http://vbarthel-fr.github.com/scroll-based-animation/linearMoveAnimation/demo
+http://vbarthel-fr.github.com/scroll-based-animation/linearMoveAnimation/demo2
 
