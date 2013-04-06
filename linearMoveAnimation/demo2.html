@@ -21,14 +21,17 @@
     </div>
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="./linearMove.js"></script>
+    <script type="text/javascript" src="../scroll-based-animation.js"></script>
     <script type="text/javascript">
         $(function(){
 
         
             var iH = window.innerHeight;
             
-            var myModel = new LinearMoveModel({
+            var myScrollBasedAnimationView1 
+                = new ScrollBasedAnimationView("#linearMoveModelDemo2LeftDoor");
+            
+            var myModel1 = new LinearMoveModel({
                 scrollStart     :   0,
                 scrollEnd       :   iH,
                 xStart          :   0,
@@ -37,12 +40,10 @@
                 xUnit           :   "%"
             });
             
-            var myView = new LinearMoveView({
-                elementId : "#linearMoveModelDemo2LeftDoor"
-            });
+            myScrollBasedAnimationView1.addModel(myModel1);            
             
-            myView.setModel(myModel);
-            
+            var myScrollBasedAnimationView2 
+                = new ScrollBasedAnimationView("#linearMoveModelDemo2RightDoor");            
             
             var myModel2 = new LinearMoveModel({
                 scrollStart     :   0,
@@ -53,17 +54,14 @@
                 xUnit           :   "%"
             });
             
-            var myView2 = new LinearMoveView({
-                elementId : "#linearMoveModelDemo2RightDoor"
-            });
+            myScrollBasedAnimationView2.addModel(myModel2);
             
-            myView2.setModel(myModel2);
             
             $(window).bind('scroll', function(){
                 var windowScrollTop = $(window).scrollTop();
                 
-                myView.update(windowScrollTop);
-                myView2.update(windowScrollTop);
+                myScrollBasedAnimationView1.update(windowScrollTop);
+                myScrollBasedAnimationView2.update(windowScrollTop);
             })
             
         });
