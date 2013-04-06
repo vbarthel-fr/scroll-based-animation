@@ -224,9 +224,9 @@
         
     SmoothSwitchModel.prototype.getValue = function(scrollTop){
         if(scrollTop < this.scrollStart){
-            return null;
+            return this.valueBefore+this.valueUnit;
         }else if(scrollTop > this.scrollEnd){
-            return null;
+            return this.valueAfter+this.valueUnit;
         }else{
             var value = this.valueBefore + (scrollTop - this.scrollStart) * this.valueByScroll;
             return value+this.valueUnit;

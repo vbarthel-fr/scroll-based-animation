@@ -1,0 +1,100 @@
+header{
+    position            :   fixed;
+    top                 :   0px;
+    left                :   0px;
+    height              :   50px;
+    width               :   100%;
+    background-color    :   rgb(207, 207, 207);
+    z-index             :   100;
+}
+
+#mask-left{
+    position            :   absolute;
+    top                 :   0px;
+    left                :   0px;
+    width               :   50%;
+    height              :   100%;
+    background-color    :   rgba(74, 197, 74, 0.81);
+}
+
+#mask-right{
+    position            :   absolute;
+    top                 :   0px;
+    right               :   0px;
+    width               :   50%;
+    height              :   100%;
+    background-color    :   rgba(74, 197, 74, 0.81);
+}
+
+.title{
+    margin              :   0 auto;
+    color               :   black;
+    text-align          :   center;
+    font-size           :   2em;
+    padding-top         :   5px;
+}
+
+#instruction{
+    text-align          :   center;
+    font-size           :   4em;
+    background-color    :   rgb(207, 207, 207);
+    padding             :   30px;
+}
+
+body{
+    padding-top         :   200px;
+    font-family         :   Helvetica;
+}
+
+#firstSection{
+    margin-bottom       :   1000px;        
+}
+
+#secondSection{
+    margin-bottom       :   500px;
+}
+
+.article-title-container{
+    width               :   200px;
+    height              :   150px;
+    margin              :   40px; 
+    background-color    :   rgba(74, 197, 74, 0.81);
+}
+
+.article-title{
+    position            :   absolute;
+    top                 :   -300px;
+    left                :   800px;
+    font-size           :   4em;
+    width               :   224px;
+    text-align          :   center;
+    opacity             :   0.6;
+}
+
+.article-content{
+    padding-left        :   5%;
+    padding-right       :   5%;
+    line-height         :   1.3em;
+    text-align          :   justify;
+}
+
+.article-section{
+    position            :   relative;
+    z-index             :   10;
+    margin-bottom       :   400px;
+}
+
+.next-article-container{
+    position            :   absolute;
+    top                 :   -370px;
+    left                :   754px;    
+    width               :   300px;
+    height              :   200px;
+    background-color    :   rgba(74, 197, 74, 0.61);
+}
+
+.H6000px{
+    height              :   6000px;
+    border-left         :   3px solid #A3A3A3;
+    margin-left         :   10px;    
+}
