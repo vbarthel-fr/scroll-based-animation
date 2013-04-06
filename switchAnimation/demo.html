@@ -54,32 +54,35 @@
     </section>
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="./switch.js"></script>
+    <script type="text/javascript" src="../scroll-based-animation.js"></script>
     <script type="text/javascript">
         $(function(){
-
-            var  switchDemo = new SwitchView({
-                elementId     :   "#switchModelDemo"
-            });
             
-            switchDemo.addSwitchProperty({
+            var myScrollBasedAnimationView 
+                = new ScrollBasedAnimationView("#switchModelDemo");
+            
+            var mySwitchModel1 = new SwitchModel({
                 scrollChange    :   800,
-                name            :   "font-size",
+                propertyName    :   "font-size",
                 valueBefore     :   "1em",
                 valueAfter      :   "1.5em",
             });
             
-            switchDemo.addSwitchProperty({
+            var mySwitchModel2 = new SwitchModel({
                 scrollChange    :   200,
-                name            :   "font-weight",
+                propertyName    :   "font-weight",
                 valueBefore     :   "normal",
                 valueAfter      :   "bold",
             });
             
+            myScrollBasedAnimationView.addModel(mySwitchModel1);
+            myScrollBasedAnimationView.addModel(mySwitchModel2);
+            
+            
             
             $(window).bind('scroll', function(){
                 var windowScrollTop = $(window).scrollTop();
-                switchDemo.update(windowScrollTop);
+                myScrollBasedAnimationView.update(windowScrollTop);
             })
             
         });

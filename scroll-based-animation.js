@@ -4,6 +4,61 @@
 **************************************************************************
 **************************************************************************
 *   NAME
+*       ScrollBasedAnimationView
+***************************************************************************
+*   ATTRIBUTES
+*   elementId
+*   modelList;
+*
+**************************************************************************
+*   METHODS
+*       update
+*       addModel
+**************************************************************************
+**************************************************************************/
+(function(){
+    ScrollBasedAnimationView = function(elementId){
+        this.elementId = elementId;
+        this.modelList = [];
+    };
+    
+    ScrollBasedAnimationView.prototype = {
+    
+        addModel : function(model){
+            this.modelList.push(model);
+        },
+        
+        update : function(scrollTop){
+            var these = this;
+            $.each(this.modelList, function(index, model){
+                
+                if(model instanceof SwitchModel){
+                    if(model.getPropertyType() == "css"){
+                        $(these.elementId).css(model.getPropertyName(), model.getValue(scrollTop));
+                    }
+                    /*
+                        TO-DO
+                        other property type !
+                    */
+                }else if(model instanceof LinearMoveModel){
+                    var currentPosition = model.getPosition(scrollTop);
+                    $(these.elementId).css('left',    currentPosition.x);
+                    $(these.elementId).css('top',     currentPosition.y);
+                }
+                
+            });
+        },
+    };
+
+})();
+
+
+/*************************************************************************
+**************************************************************************
+            CLASS
+**************************************************************************
+**************************************************************************
+*   NAME
 *       LinearMoveModel
 ***************************************************************************
 *   ATTRIBUTES
@@ -69,17 +124,20 @@
     
 })();
 
-
 /*************************************************************************
 **************************************************************************
             CLASS
 **************************************************************************
 **************************************************************************
 *   NAME
-*       LinearMoveView
+*       SwitchModel
 ***************************************************************************
 *   ATTRIBUTES
-*   elementId
+*   scrollChange
+*   valueBefore
+*   valueAfter
+*   propertyType   
+*   propertyName
 *
 **************************************************************************
 *   METHODS
@@ -89,22 +147,33 @@
 */
 (function(){
 
-    LinearMoveView = function(params){
-        this.elementId  =   params.elementId;
-        this.model;
+    SwitchModel = function(params){
+        var DEFAULT_VALUES = {propertyType : "css"};
+        params = $.extend(DEFAULT_VALUES, params);
+        this.scrollChange   =   params.scrollChange;
+        this.valueBefore    =   params.valueBefore;
+        this.valueAfter     =   params.valueAfter;
+        this.propertyType   =   params.propertyType;
+        this.propertyName   =   params.propertyName;
         return this;
     };
     
-    LinearMoveView.prototype = {
+    SwitchModel.prototype = {
     
-        update : function(scrollTop){
-            var currentPosition = this.model.getPosition(scrollTop);
-            $(this.elementId).css('left',    currentPosition.x);
-            $(this.elementId).css('top',     currentPosition.y);
+        getPropertyType : function(){
+            return this.propertyType;
         },
         
-        setModel : function(model){
-            this.model = model;
+        getPropertyName : function(){
+            return this.propertyName;
+        },
+    
+        getValue : function(scrollTop){
+            if(scrollTop < this.scrollChange){
+                return this.valueBefore;
+            }else{
+                return this.valueAfter;
+            }
         }
         
     };

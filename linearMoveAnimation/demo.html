@@ -62,11 +62,14 @@
     </section>
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="./linearMove.js"></script>
+    <script type="text/javascript" src="../scroll-based-animation.js"></script>
     <script type="text/javascript">
         $(function(){
+        
+            var myScrollBasedAnimationView 
+                = new ScrollBasedAnimationView("#linearMoveModelDemoItem");
 
-            var myModel = new LinearMoveModel({
+            var mySwitchModel = new LinearMoveModel({
                 scrollStart     :   0,
                 scrollEnd       :   400,
                 xStart          :   0,
@@ -74,16 +77,11 @@
                 xMovement       :   600,
             });
             
-            var myView = new LinearMoveView({
-                elementId : "#linearMoveModelDemoItem"
-            });
-            
-            myView.setModel(myModel);
+            myScrollBasedAnimationView.addModel(mySwitchModel);
             
             $(window).bind('scroll', function(){
-                var windowScrollTop = $(window).scrollTop();
-                
-                myView.update(windowScrollTop);
+                var windowScrollTop = $(window).scrollTop();                
+                myScrollBasedAnimationView.update(windowScrollTop);
             })
             
         });
