@@ -47,10 +47,11 @@
         
     </div>
     
-    <section class="fixedContent fcCentered" id="switchModelDemo">
-            scroll < 200 px -> font-size : 1em; font-weight:normal;<br>
-            200px < scroll < 800 px -> font-size : 1em; font-weight:bold;<br>
-            800px < scroll -> font-size : 2em; font-weight:bold;<br>
+    <section class="fixedContent fcCentered" id="smoothSwitchModelDemoContainer">
+            <div class="container-display-table">
+                <div id="smoothSwitchModelDemo">
+                </div>
+            </div>
     </section>
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -59,25 +60,29 @@
         $(function(){
             
             var myScrollBasedAnimationView 
-                = new ScrollBasedAnimationView("#switchModelDemo");
+                = new ScrollBasedAnimationView("#smoothSwitchModelDemo");
             
-            var mySwitchModel1 = new SwitchModel({
-                scrollStart     :   800,
-                propertyName    :   "font-size",
-                valueBefore     :   "1em",
-                valueAfter      :   "1.5em",
+            var myModel1 = new SmoothSwitchModel({
+                scrollStart     :   400,
+                scrollEnd       :   1000,
+                propertyName    :   "width",
+                valueBefore     :   300,
+                valueAfter      :   100,
+                valueUnit       :   "px",    
             });
             
-            var mySwitchModel2 = new SwitchModel({
-                scrollStart     :   200,
-                propertyName    :   "font-weight",
-                valueBefore     :   "normal",
-                valueAfter      :   "bold",
+            var myModel2 = new SmoothSwitchModel({
+                scrollStart     :   400,
+                scrollEnd       :   1000,
+                propertyName    :   "height",
+                valueBefore     :   300,
+                valueAfter      :   100,
+                valueUnit       :   "px",    
             });
             
-            myScrollBasedAnimationView.addModel(mySwitchModel1);
-            myScrollBasedAnimationView.addModel(mySwitchModel2);
             
+            myScrollBasedAnimationView.addModel(myModel1);            
+            myScrollBasedAnimationView.addModel(myModel2);            
             
             
             $(window).bind('scroll', function(){

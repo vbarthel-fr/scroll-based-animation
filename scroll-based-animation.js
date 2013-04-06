@@ -32,9 +32,12 @@
             var these = this;
             $.each(this.modelList, function(index, model){
                 
-                if(model instanceof SwitchModel){
+                if(model instanceof SwitchModel || model instanceof SmoothSwitchModel){
                     if(model.getPropertyType() == "css"){
-                        $(these.elementId).css(model.getPropertyName(), model.getValue(scrollTop));
+                        var value = model.getValue(scrollTop);
+                        if( value != null){
+                            $(these.elementId).css(model.getPropertyName(), value);                        
+                        }
                     }
                     /*
                         TO-DO
@@ -124,6 +127,9 @@
     
 })();
 
+
+
+
 /*************************************************************************
 **************************************************************************
             CLASS
@@ -150,7 +156,7 @@
     SwitchModel = function(params){
         var DEFAULT_VALUES = {propertyType : "css"};
         params = $.extend(DEFAULT_VALUES, params);
-        this.scrollChange   =   params.scrollChange;
+        this.scrollStart    =   params.scrollStart;
         this.valueBefore    =   params.valueBefore;
         this.valueAfter     =   params.valueAfter;
         this.propertyType   =   params.propertyType;
@@ -169,7 +175,7 @@
         },
     
         getValue : function(scrollTop){
-            if(scrollTop < this.scrollChange){
+            if(scrollTop < this.scrollStart){
                 return this.valueBefore;
             }else{
                 return this.valueAfter;
@@ -177,5 +183,55 @@
         }
         
     };
+    
+})();
+
+
+
+/*************************************************************************
+**************************************************************************
+            CLASS
+**************************************************************************
+**************************************************************************
+*   NAME
+*       SmoothSwitchModel
+*       extends SwitchModel
+***************************************************************************
+*   ATTRIBUTES
+*   scrollEnd
+*   valueUnit
+*   valueByScroll
+*
+**************************************************************************
+*   METHODS
+*       getValue
+**************************************************************************
+**************************************************************************
+*/
+(function(){
+
+    SmoothSwitchModel = function(params){
+        var DEFAULT_VALUES = {propertyType : "css", valueUnit : ""};
+        params = $.extend(DEFAULT_VALUES, params);
+        SwitchModel.call(this,params);
+        this.scrollEnd      =   params.scrollEnd;
+        this.valueUnit      =   params.valueUnit;
+        this.valueByScroll  =   (this.valueAfter - this.valueBefore) / (this.scrollEnd - this.scrollStart);
+        return this;
+    };
+    
+    SmoothSwitchModel.prototype = new SwitchModel();
+        
+    SmoothSwitchModel.prototype.getValue = function(scrollTop){
+        if(scrollTop < this.scrollStart){
+            return null;
+        }else if(scrollTop > this.scrollEnd){
+            return null;
+        }else{
+            var value = this.valueBefore + (scrollTop - this.scrollStart) * this.valueByScroll;
+            return value+this.valueUnit;
+        }
+    };       
+
     
 })();
