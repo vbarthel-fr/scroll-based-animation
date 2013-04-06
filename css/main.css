@@ -5,7 +5,6 @@ body{
 
 .H2000px{
     height              :   2000px;
-    position            :   relative;
     border-left         :   3px solid #A3A3A3;
     margin-left         :   10px;    
 }
@@ -157,5 +156,7 @@ body{
     background-color    :   rgba(74, 197, 74, 0.81);
     margin              :   0 auto;
 }
+
+
 
 
