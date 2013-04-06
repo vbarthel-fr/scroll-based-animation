@@ -13,3 +13,6 @@ http://vbarthel-fr.github.com/scroll-based-animation/switchAnimation/demo
 LinearMoveAnimation
 http://vbarthel-fr.github.com/scroll-based-animation/linearMoveAnimation/demo2
 
+SmoothSwitchAnimation
+http://vbarthel-fr.github.com/scroll-based-animation/smoothSwitchAnimation/demo
+
