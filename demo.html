@@ -8,14 +8,21 @@
 	<title>Scroll Based Animation : Demo</title>
 </head>
 <body style="height  :   6000px;">
+
+<a href="https://github.com/vbarthel-fr/scroll-based-animation">
+    <img class="github-ribbon" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
+</a>
     
     <header>
-        <div id="mask-left">
+        <div id="mask-left" class="mask">
         </div>
-        <div id="mask-right">
+        <div id="mask-right" class="mask">
         </div>
-        <div class="title">
-            My Web Site
+        <div class="title" id="firstTitle">
+            Welcome ...
+        </div>
+        <div class="title hiddenAtStart" id="secondTitle">
+            ... to this first demo
         </div>
     </header>
     
@@ -32,62 +39,92 @@
     </section>
     
     <section class="content article-section">
-        <div class="next-article-container">
+        <div class="box-container">
+            <div class="next-article-container">
+            <div class="next-article-label">
+                Next article
+            </div>
+            </div>
+            <div class="article-title" id="title_1">
+                N°1
+            </div>
+            <div class="article-title-container">
+            
+            </div>
         </div>
-        <div class="article-title" id="title_1">
-            N°1
-        </div>
-        <div class="article-title-container">
         
+        <div class="article-content">
+            <div class="box-container">
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        
+            </div>
+        </div>
+    </section>
+    
+    <section class="content article-section" id="firstArticleSection">
+        <div class="box-container">
+            <div class="next-article-container">
+                <div class="next-article-label">
+                    Next article
+                </div>
+            </div>
+            <div class="article-title" id="title_2">
+                N°2
+            </div>
+            <div class="article-title-container">
+            
+            </div>
         </div>
         <div class="article-content">
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <div class="box-container">
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </div>
         </div>
     </section>
     
     <section class="content article-section">
-        <div class="next-article-container">
-        </div>
-        <div class="article-title" id="title_2">
-            N°2
-        </div>
-        <div class="article-title-container">
-        
+        <div class="box-container">
+            <div class="next-article-container">
+                <div class="next-article-label">
+                    Next article
+                </div>
+            </div>
+            <div class="article-title" id="title_3">
+                N°3
+            </div>
+            <div class="article-title-container">
+            
+            </div>
         </div>
         <div class="article-content">
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <div class="box-container">
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </div>
         </div>
     </section>
     
     <section class="content article-section">
-        <div class="next-article-container">
-        </div>
-        <div class="article-title" id="title_3">
-            N°3
-        </div>
-        <div class="article-title-container">
-        
-        </div>
-        <div class="article-content">
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        </div>
-    </section>
-    
-    <section class="content article-section">
-        <div class="next-article-container">
-        </div>
-        <div class="article-title" id="title_4">
-            N°4
-        </div>
-        <div class="article-title-container">
-        
+        <div class="box-container">
+            <div class="next-article-container">
+                <div class="next-article-label">
+                    Next article
+                </div>
+            </div>
+            <div class="article-title" id="title_4">
+                N°4
+            </div>
+            <div class="article-title-container">
+            
+            </div>
         </div>
         <div class="article-content">
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <div class="box-container">
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </div>
         </div>
     </section>
     
@@ -95,6 +132,110 @@
     <script type="text/javascript" src="./scroll-based-animation.js"></script>
     <script type="text/javascript">
         $(function(){
+            
+            
+            //*            
+            
+            var makeArticleTitleScrollbasedAnimationView = function(articleTitleId, scrollStart, scrollEnd){
+                
+                var title 
+                    = new ScrollBasedAnimationView(articleTitleId); 
+                
+                var titleModel1 = new SmoothSwitchModel({
+                    scrollStart     :   scrollStart,
+                    scrollEnd       :   scrollEnd,
+                    propertyName    :   "top",
+                    valueBefore     :   -300,
+                    valueAfter      :   48,
+                    valueUnit       :   "px", 
+                });
+                
+                var titleModel2 = new SmoothSwitchModel({
+                    scrollStart     :   scrollStart,
+                    scrollEnd       :   scrollEnd,
+                    propertyName    :   "right",
+                    valueBefore     :   0,
+                    valueAfter      :   rightTransition,
+                    valueUnit       :   "px", 
+                });
+                
+                var titleModel3 = new SmoothSwitchModel({
+                    scrollStart     :   scrollStart,
+                    scrollEnd       :   scrollEnd,
+                    propertyName    :   "font-size",
+                    valueBefore     :   4,
+                    valueAfter      :   2,
+                    valueUnit       :   "em", 
+                });
+                
+                var titleModel4 = new SwitchModel({
+                    scrollStart     :   scrollEnd,
+                    propertyName    :   "border-bottom",
+                    valueBefore     :   "none",
+                    valueAfter      :   "8px solid rgba(255, 118, 0, 0.7)", 
+                });
+                
+                var titleModel5 = new SwitchModel({
+                    scrollStart     :   scrollEnd,
+                    propertyName    :   "opacity",
+                    valueBefore     :   0.6,
+                    valueAfter      :   1, 
+                });
+                
+                title.addModel(titleModel1);
+                title.addModel(titleModel2);
+                title.addModel(titleModel3);
+                title.addModel(titleModel4);
+                title.addModel(titleModel5);
+                
+                return title;
+            }
+            
+            
+            var scrollStartReference    =   1150;
+            var scrollEndReference      =   1750;
+            var sectionSize             =   $("#firstArticleSection").height() + 400;
+            var rightTransition         =   $(".box-container").width() - 247;
+            
+            var articleTitle1 
+                = makeArticleTitleScrollbasedAnimationView("#title_1", 
+                scrollStartReference+sectionSize*0, scrollEndReference+sectionSize*0);
+                
+            var articleTitle2 
+                = makeArticleTitleScrollbasedAnimationView("#title_2", 
+                scrollStartReference+sectionSize*1, scrollEndReference+sectionSize*1);
+                
+            var articleTitle3 
+                = makeArticleTitleScrollbasedAnimationView("#title_3", 
+                scrollStartReference+sectionSize*2, scrollEndReference+sectionSize*2);
+                
+            var articleTitle4 
+                = makeArticleTitleScrollbasedAnimationView("#title_4", 
+                scrollStartReference+sectionSize*3, scrollEndReference+sectionSize*3);
+            
+            var firstTitle 
+                = new ScrollBasedAnimationView("#firstTitle");
+                
+            var firstTitleModel = new SwitchModel({
+                scrollStart     :   600,
+                propertyName    :   "display",
+                valueBefore     :   "block",
+                valueAfter      :   "none",
+            });
+            
+            firstTitle.addModel(firstTitleModel);
+            
+            var secondTitle
+                = new ScrollBasedAnimationView("#secondTitle");
+                
+            var secondTitleModel = new SwitchModel({
+                scrollStart     :   600,
+                propertyName    :   "display",
+                valueBefore     :   "none",
+                valueAfter      :   "block",
+            });
+            
+            secondTitle.addModel(secondTitleModel);
             
             var maskLeft 
                 = new ScrollBasedAnimationView("#mask-left");  
@@ -124,231 +265,24 @@
             
             maskRight.addModel(maskRightModel);
             
-            var scrollStartReference    = 1150;
-            var scrollEndReference      = 1750;
-            var sectionSize             = 790;
-            
-            var title_1 
-                = new ScrollBasedAnimationView("#title_1"); 
-            
-            var title_1Model1 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference,
-                scrollEnd       :   scrollEndReference,
-                propertyName    :   "top",
-                valueBefore     :   -300,
-                valueAfter      :   58,
-                valueUnit       :   "px", 
-            });
-            
-            var title_1Model2 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference,
-                scrollEnd       :   scrollEndReference,
-                propertyName    :   "left",
-                valueBefore     :   800,
-                valueAfter      :   28,
-                valueUnit       :   "px", 
-            });
-            
-            var title_1Model3 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference,
-                scrollEnd       :   scrollEndReference,
-                propertyName    :   "font-size",
-                valueBefore     :   4,
-                valueAfter      :   2,
-                valueUnit       :   "em", 
-            });
-            
-            var title_1Model4 = new SwitchModel({
-                scrollStart     :   scrollEndReference,
-                scrollEnd       :   scrollEndReference,
-                propertyName    :   "border-bottom",
-                valueBefore     :   "none",
-                valueAfter      :   "2px solid black", 
-            });
-            
-            var title_1Model5 = new SwitchModel({
-                scrollStart     :   scrollEndReference,
-                scrollEnd       :   scrollEndReference,
-                propertyName    :   "opacity",
-                valueBefore     :   0.6,
-                valueAfter      :   1, 
-            });
-            
-            title_1.addModel(title_1Model1);
-            title_1.addModel(title_1Model2);
-            title_1.addModel(title_1Model3);
-            title_1.addModel(title_1Model4);
-            title_1.addModel(title_1Model5);
-            
-            
-            var title_2 
-                = new ScrollBasedAnimationView("#title_2"); 
-            
-            var title_2Model1 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize,
-                scrollEnd       :   scrollEndReference+sectionSize,
-                propertyName    :   "top",
-                valueBefore     :   -300,
-                valueAfter      :   58,
-                valueUnit       :   "px", 
-            });
-            
-            var title_2Model2 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize,
-                scrollEnd       :   scrollEndReference+sectionSize,
-                propertyName    :   "left",
-                valueBefore     :   800,
-                valueAfter      :   28,
-                valueUnit       :   "px", 
-            });
-            
-            var title_2Model3 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize,
-                scrollEnd       :   scrollEndReference+sectionSize,
-                propertyName    :   "font-size",
-                valueBefore     :   4,
-                valueAfter      :   2,
-                valueUnit       :   "em", 
-            });
-            
-            var title_2Model4 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize,
-                scrollEnd       :   scrollEndReference+sectionSize,
-                propertyName    :   "border-bottom",
-                valueBefore     :   "none",
-                valueAfter      :   "2px solid black", 
-            });
-            
-            var title_2Model5 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize,
-                scrollEnd       :   scrollEndReference+sectionSize,
-                propertyName    :   "opacity",
-                valueBefore     :   0.6,
-                valueAfter      :   1, 
-            });
-            
-            title_2.addModel(title_2Model1);
-            title_2.addModel(title_2Model2);
-            title_2.addModel(title_2Model3);
-            title_2.addModel(title_2Model4);
-            title_2.addModel(title_2Model5);
-            
-            
-            var title_3 
-                = new ScrollBasedAnimationView("#title_3"); 
-            
-            var title_3Model1 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*2,
-                scrollEnd       :   scrollEndReference+sectionSize*2,
-                propertyName    :   "top",
-                valueBefore     :   -300,
-                valueAfter      :   58,
-                valueUnit       :   "px", 
-            });
-            
-            var title_3Model2 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*2,
-                scrollEnd       :   scrollEndReference+sectionSize*2,
-                propertyName    :   "left",
-                valueBefore     :   800,
-                valueAfter      :   28,
-                valueUnit       :   "px", 
-            });
-            
-            var title_3Model3 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*2,
-                scrollEnd       :   scrollEndReference+sectionSize*2,
-                propertyName    :   "font-size",
-                valueBefore     :   4,
-                valueAfter      :   2,
-                valueUnit       :   "em", 
-            });
-            
-            var title_3Model4 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize*2,
-                scrollEnd       :   scrollEndReference+sectionSize*2,
-                propertyName    :   "border-bottom",
-                valueBefore     :   "none",
-                valueAfter      :   "2px solid black", 
-            });
-            
-            var title_3Model5 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize*2,
-                scrollEnd       :   scrollEndReference+sectionSize*2,
-                propertyName    :   "opacity",
-                valueBefore     :   0.6,
-                valueAfter      :   1, 
-            });
-            
-            title_3.addModel(title_3Model1);
-            title_3.addModel(title_3Model2);
-            title_3.addModel(title_3Model3);
-            title_3.addModel(title_3Model4);
-            title_3.addModel(title_3Model5);
-            
-            
-            var title_4 
-                = new ScrollBasedAnimationView("#title_4"); 
-            
-            var title_4Model1 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*3,
-                scrollEnd       :   scrollEndReference+sectionSize*3,
-                propertyName    :   "top",
-                valueBefore     :   -300,
-                valueAfter      :   58,
-                valueUnit       :   "px", 
-            });
-            
-            var title_4Model2 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*3,
-                scrollEnd       :   scrollEndReference+sectionSize*3,
-                propertyName    :   "left",
-                valueBefore     :   800,
-                valueAfter      :   28,
-                valueUnit       :   "px", 
-            });
-            
-            var title_4Model3 = new SmoothSwitchModel({
-                scrollStart     :   scrollStartReference+sectionSize*3,
-                scrollEnd       :   scrollEndReference+sectionSize*3,
-                propertyName    :   "font-size",
-                valueBefore     :   4,
-                valueAfter      :   2,
-                valueUnit       :   "em", 
-            });
-            
-            var title_4Model4 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize*3,
-                scrollEnd       :   scrollEndReference+sectionSize*3,
-                propertyName    :   "border-bottom",
-                valueBefore     :   "none",
-                valueAfter      :   "2px solid black", 
-            });
-            
-            var title_4Model5 = new SwitchModel({
-                scrollStart     :   scrollEndReference+sectionSize*3,
-                scrollEnd       :   scrollEndReference+sectionSize*3,
-                propertyName    :   "opacity",
-                valueBefore     :   0.6,
-                valueAfter      :   1, 
-            });
-            
-            title_4.addModel(title_4Model1);
-            title_4.addModel(title_4Model2);
-            title_4.addModel(title_4Model3);
-            title_4.addModel(title_4Model4);
-            title_4.addModel(title_4Model5);
-            
             
             $(window).bind('scroll', function(){
                 var windowScrollTop = $(window).scrollTop();
                 maskLeft.update(windowScrollTop);
                 maskRight.update(windowScrollTop);
-                title_1.update(windowScrollTop);
-                title_2.update(windowScrollTop);
-                title_3.update(windowScrollTop);
-                title_4.update(windowScrollTop);
+                
+                firstTitle.update(windowScrollTop);
+                secondTitle.update(windowScrollTop);
+                                
+                articleTitle1.update(windowScrollTop);
+                articleTitle2.update(windowScrollTop);
+                articleTitle3.update(windowScrollTop);
+                articleTitle4.update(windowScrollTop);
+                
             })
+            
+            //*/
+            
             
         });
     </script>

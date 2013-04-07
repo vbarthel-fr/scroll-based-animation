@@ -1,37 +1,55 @@
+.github-ribbon{
+    position            :   fixed;
+    top                 :   0; 
+    right               :   0; 
+    border              :   0; 
+    z-index             :   1000;
+}
+
+body{
+    background-color    :   rgb(222, 223, 211);
+}
+
+
 header{
     position            :   fixed;
     top                 :   0px;
     left                :   0px;
-    height              :   50px;
+    height              :   140px;
     width               :   100%;
     background-color    :   rgb(207, 207, 207);
     z-index             :   100;
 }
 
-#mask-left{
+.hiddenAtStart{
+    display             :   none;
+}
+
+.mask{
     position            :   absolute;
-    top                 :   0px;
-    left                :   0px;
     width               :   50%;
     height              :   100%;
-    background-color    :   rgba(74, 197, 74, 0.81);
+    background-color    :   #668396;
+}
+
+#mask-left{
+
+    top                 :   0px;
+    left                :   0px;
+
 }
 
 #mask-right{
-    position            :   absolute;
     top                 :   0px;
     right               :   0px;
-    width               :   50%;
-    height              :   100%;
-    background-color    :   rgba(74, 197, 74, 0.81);
 }
 
 .title{
     margin              :   0 auto;
     color               :   black;
     text-align          :   center;
-    font-size           :   2em;
-    padding-top         :   5px;
+    font-size           :   3em;
+    padding-top         :   45px;
 }
 
 #instruction{
@@ -57,25 +75,32 @@ body{
 .article-title-container{
     width               :   200px;
     height              :   150px;
-    margin              :   40px; 
-    background-color    :   rgba(74, 197, 74, 0.81);
+    margin-bottom       :   40px; 
+    background-color    :   #668396;
+    position            :   relative;
+    left                :   0%;
 }
 
 .article-title{
     position            :   absolute;
     top                 :   -300px;
-    left                :   800px;
+    right               :   0px;
+    margin-right        :   35px;    
     font-size           :   4em;
     width               :   224px;
     text-align          :   center;
     opacity             :   0.6;
+    z-index             :   100;
 }
 
 .article-content{
     padding-left        :   5%;
     padding-right       :   5%;
-    line-height         :   1.3em;
+    padding-top         :   10px;
+    padding-bottom      :   10px;
+    line-height         :   1.5em;
     text-align          :   justify;
+    background-color    :   rgb(207, 207, 207);
 }
 
 .article-section{
@@ -87,10 +112,29 @@ body{
 .next-article-container{
     position            :   absolute;
     top                 :   -370px;
-    left                :   754px;    
+    right               :   0%;    
     width               :   300px;
     height              :   200px;
-    background-color    :   rgba(74, 197, 74, 0.61);
+    background-color    :   #668396;
+    opacity             :   0.7;
+}
+
+.next-article-label{
+    font-size           :   2em;
+    position            :   relative;
+    top                 :   85px;
+    left                :   -100%;
+    background-color    :   rgb(207, 207, 207);
+    width               :   180px;
+    padding             :   15px;
+    text-align          :   center;
+}
+
+.box-container{
+    position            :   relative;
+    margin              :   0 auto;
+    max-width           :   1200px;
+    width               :   95%;
 }
 
 .H6000px{
