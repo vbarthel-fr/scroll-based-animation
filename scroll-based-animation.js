@@ -50,8 +50,8 @@
                     
                 }else if(model instanceof LinearMoveModel){
                     var currentPosition = model.getPosition(scrollTop);
-                    $(these.elementId).css('left',    currentPosition.x);
-                    $(these.elementId).css('top',     currentPosition.y);
+                    $(these.elementId).css(these.getHorizontalReference(),    currentPosition.x);
+                    $(these.elementId).css(these.getVerticalReference(),     currentPosition.y);
                 }
                 
             });
@@ -78,6 +78,8 @@
 *   yMovement
 *   xUnit
 *   yUnit
+*   verticalReference
+*   horizontalReference
 *
 **************************************************************************
 *   METHODS
@@ -89,24 +91,28 @@
 
     LinearMoveModel = function(params){
         var DEFAULT_VALUES = {
-            xStart      :   0,
-            yStart      :   0,    
-            xMovement   :   0,
-            yMovement   :   0,
-            xUnit       :   "px",
-            yUnit       :   "px",    
+            xStart                  :   0,
+            yStart                  :   0,    
+            xMovement               :   0,
+            yMovement               :   0,
+            xUnit                   :   "px",
+            yUnit                   :   "px",
+            verticalReference       :   "top", 
+            horizontalReference     :   "left"
         };
         params = $.extend(DEFAULT_VALUES, params);
-        this.scrollStart    =   params.scrollStart;
-        this.scrollEnd      =   params.scrollEnd;
-        this.xStart         =   params.xStart;
-        this.yStart         =   params.yStart;
-        this.xMovement      =   params.xMovement;
-        this.yMovement      =   params.yMovement;
-        this.xUnit          =   params.xUnit;
-        this.yUnit          =   params.yUnit;
-        this.xMoveByScroll  =   this.xMovement / (this.scrollEnd - this.scrollStart);
-        this.yMoveByScroll  =   this.yMovement / (this.scrollEnd - this.scrollStart);
+        this.scrollStart            =   params.scrollStart;
+        this.scrollEnd              =   params.scrollEnd;
+        this.xStart                 =   params.xStart;
+        this.yStart                 =   params.yStart;
+        this.xMovement              =   params.xMovement;
+        this.yMovement              =   params.yMovement;
+        this.xUnit                  =   params.xUnit;
+        this.yUnit                  =   params.yUnit;
+        this.xMoveByScroll          =   this.xMovement / (this.scrollEnd - this.scrollStart);
+        this.yMoveByScroll          =   this.yMovement / (this.scrollEnd - this.scrollStart);
+        this.verticalReference      =   params.verticalReference;
+        this.horizontalReference    =   params.horizontalReference;
         return this;
     };
     
@@ -122,6 +128,14 @@
                 var currentY = this.yStart + this.yMoveByScroll * (scrollTop - this.scrollStart);                
                 return this.formatedPosition(currentX, currentY);
             }
+        },
+        
+        getHorizontalReference : function(){
+            return this.horizontalReference;
+        },
+        
+        getVerticalReference : function(){
+            return this.verticalReference;
         },
         
         formatedPosition : function(p_x, p_y){
