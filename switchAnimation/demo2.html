@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+	<title>SwitchModel : Demo</title>
+    <style>
+        
+        .demo2_1{            
+            background-color                :   rgba(0, 255, 0, 0.59);    
+            font-size                       :   1em;
+        }
+        
+        .demo2_2{
+            background-color                :   rgba(0, 0, 255, 0.59);
+            font-size                       :   2em;
+        }
+        
+        #switchModelDemo2{
+            width                           :   500px;
+            text-align                      :   center;
+            margin-left                     :   -250px;
+            transition-duration             :   1s;
+            transition-timing-function      :   ease-in;
+            padding-top                     :   40px;
+            padding-bottom                  :   30px;
+        }
+        
+    </style>
+</head>
+<body>
+	
+    <div class="ladder H2000px">
+        <span class="pixelGraduation top200px">
+            200px
+        </span>
+        
+        <span class="pixelGraduation top400px">
+            400px
+        </span>
+        
+        <span class="pixelGraduation top600px">
+            600px
+        </span>
+        
+        <span class="pixelGraduation top800px">
+            800px
+        </span>
+        
+        <span class="pixelGraduation top1000px">
+            1000px
+        </span>
+        
+        <span class="pixelGraduation top1200px">
+            1200px
+        </span>
+        
+        <span class="pixelGraduation top1400px">
+            1400px
+        </span>
+        
+        <span class="pixelGraduation top1600px">
+            1600px
+        </span>
+        
+        <span class="pixelGraduation top1800px">
+            1800px
+        </span>
+        
+    </div>
+    
+    <section class="fixedContent fcCentered demo2 demo2_1" id="switchModelDemo2">
+            Welcome to an other demo! <br><br>
+            Scroll down
+    </section>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../scroll-based-animation.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            
+            var myScrollBasedAnimationView 
+                = new ScrollBasedAnimationView("#switchModelDemo2");
+            
+            var mySwitchModel1 = new SwitchModel({
+                scrollStart     :   500,
+                propertyType    :   "class",
+                valueBefore     :   "demo2_1",
+                valueAfter      :   "demo2_2",
+            });          
+            
+            myScrollBasedAnimationView.addModel(mySwitchModel1); 
+            
+            
+            $(window).bind('scroll', function(){
+                var windowScrollTop = $(window).scrollTop();
+                myScrollBasedAnimationView.update(windowScrollTop);
+            })
+            
+        });
+    </script>
+</body>
+</html>

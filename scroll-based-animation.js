@@ -32,17 +32,22 @@
             var these = this;
             $.each(this.modelList, function(index, model){
                 
-                if(model instanceof SwitchModel || model instanceof SmoothSwitchModel){
-                    if(model.getPropertyType() == "css"){
-                        var value = model.getValue(scrollTop);
-                        if( value != null){
+                if(model instanceof SwitchModel){                
+                    var value = model.getValue(scrollTop);
+                    if(value != null){
+                        if(model.getPropertyType() == "css"){                         
                             $(these.elementId).css(model.getPropertyName(), value);                        
+                            
+                        }if(model.getPropertyType() == "class"){
+                            $(these.elementId).addClass(value.new);
+                            $(these.elementId).removeClass(value.old);
                         }
-                    }
-                    /*
-                        TO-DO
-                        other property type !
-                    */
+                        /*
+                            TO-DO
+                            other property type !
+                        */               
+                    }                
+                    
                 }else if(model instanceof LinearMoveModel){
                     var currentPosition = model.getPosition(scrollTop);
                     $(these.elementId).css('left',    currentPosition.x);
@@ -175,10 +180,18 @@
         },
     
         getValue : function(scrollTop){
-            if(scrollTop < this.scrollStart){
-                return this.valueBefore;
-            }else{
-                return this.valueAfter;
+            if(this.propertyType == "css"){            
+                if(scrollTop < this.scrollStart){
+                    return this.valueBefore;
+                }else{
+                    return this.valueAfter;
+                }
+            }else if(this.propertyType == "class"){
+                if(scrollTop< this.scrollStart){
+                    return {old : this.valueAfter, new : this.valueBefore};
+                }else{
+                    return {old : this.valueBefore, new : this.valueAfter};
+                }
             }
         }
         
